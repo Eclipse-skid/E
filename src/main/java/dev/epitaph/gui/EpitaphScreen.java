@@ -1,7 +1,7 @@
 package dev.epitaph.gui;
 
 import dev.epitaph.config.EpitaphConfig;
-import dev.epitaph.mixin.HeldItemRendererMixin;
+import dev.epitaph.render.HookStatus;
 import dev.epitaph.resource.TexturePacks;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -180,7 +180,7 @@ public final class EpitaphScreen extends Screen {
                 rows.add(Row.header("Spear mods"));
                 rows.add(Row.note("Any item id ending in _spear counts as a spear. Add other ids to"));
                 rows.add(Row.note("\"spearItemIds\" in config/epitaph.json (e.g. \"mymod:glaive\")."));
-                rows.add(Row.note(HeldItemRendererMixin.hookActive
+                rows.add(Row.note(HookStatus.heldItemHookRan
                         ? "Held-item hook: ACTIVE"
                         : "Held-item hook: not triggered yet (look at a held item in first person)"));
             }

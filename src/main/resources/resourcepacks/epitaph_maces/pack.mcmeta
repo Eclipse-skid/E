@@ -1,6 +1,7 @@
 {
   "pack": {
-    "pack_format": 75,
-    "description": "Epitaph dark mace"
+    "description": "Epitaph dark mace",
+    "min_format": 75,
+    "max_format": 75
   }
 }

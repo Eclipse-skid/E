@@ -1,6 +1,7 @@
 {
   "pack": {
-    "pack_format": 75,
-    "description": "Epitaph dark axes"
+    "description": "Epitaph dark axes",
+    "min_format": 75,
+    "max_format": 75
   }
 }

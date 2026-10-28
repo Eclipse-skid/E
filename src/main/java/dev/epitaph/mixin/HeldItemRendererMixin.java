@@ -1,6 +1,7 @@
 package dev.epitaph.mixin;
 
 import dev.epitaph.config.EpitaphConfig;
+import dev.epitaph.render.HookStatus;
 import dev.epitaph.render.ItemCategory;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.item.HeldItemRenderer;
@@ -25,14 +26,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(HeldItemRenderer.class)
 public abstract class HeldItemRendererMixin {
-    /** Set to true the first time the hook runs; shown in the Items tab. */
-    public static volatile boolean hookActive = false;
-
     @Inject(method = "renderFirstPersonItem", at = @At("HEAD"), require = 0)
     private void epitaph$begin(AbstractClientPlayerEntity player, float tickProgress, float pitch, Hand hand,
                                float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices,
                                @Coerce Object queue, int light, CallbackInfo ci) {
-        hookActive = true;
+        HookStatus.heldItemHookRan = true;
         matrices.push(); // always pushed; popped at RETURN so the stack stays balanced
         EpitaphConfig c = EpitaphConfig.INSTANCE;
         if (!c.masterEnabled || !c.heldItemsEnabled || item == null || item.isEmpty()) return;
