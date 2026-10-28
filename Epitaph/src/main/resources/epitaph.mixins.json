@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.epitaph.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.epitaph.mixin.EpitaphMixinPlugin",
+  "client": [
+    "HeldItemRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

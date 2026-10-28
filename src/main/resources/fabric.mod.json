@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "epitaph",
+  "version": "${version}",
+  "name": "Epitaph",
+  "description": "Client-side dark anime visual mod: config menu, Screenmates HUD, custom item textures and first-person item scale/position controls.",
+  "authors": ["Epitaph"],
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.epitaph.EpitaphClient"]
+  },
+  "mixins": [
+    { "config": "epitaph.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
